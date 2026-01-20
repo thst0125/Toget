@@ -23,14 +23,20 @@ body,
   border-radius: 22px;
   overflow: hidden;
   box-shadow: 0 40px 100px rgba(0, 0, 0, 0.8);
+  background: #000; /* viktig fallback */
 }
 
 /* BILDET */
 .scene-background {
   position: absolute;
   inset: 0;
+
   background-size: cover;
   background-position: center;
+  background-repeat: no-repeat;
+
+  /* sørger for at bildet faktisk vises (fikser problem med at bilde ikke laster på gh pages)*/
+  z-index: 0;
 
   filter: brightness(1.22) contrast(1.1) saturate(0.95);
 
@@ -43,6 +49,9 @@ body,
 .scene-overlay {
   position: absolute;
   inset: 0;
+
+  /* Må ligge over bildet for å unngå problemer med innlastning */
+  z-index: 1;
 
   background: radial-gradient(
     circle at center,
@@ -62,6 +71,10 @@ body,
   padding: 48px;
   text-align: center;
   color: #f2f2f2;
+
+  /* Sørger for at tekst alltid er øverst */
+  position: relative;
+  z-index: 2;
 }
 
 /* TEKST */

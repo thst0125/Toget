@@ -24,7 +24,9 @@ export function SceneView({ scene, backgroundImage, onChoice }: Props) {
       {/* Bakgrunnsbilde inni spillrammen */}
       <div
         className="scene-background"
-        style={{ backgroundImage: `url(${backgroundImage})` }}
+        style={{
+          backgroundImage: `url(${backgroundImage})`,
+        }}
       />
 
       {/* Mørkt overlay for lesbar tekst */}
