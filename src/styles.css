@@ -1,120 +1,94 @@
-/* FULLSKJERM BAKGRUNN */
+/* SIDEBAKGRUNN */
 html,
 body,
 #root {
   height: 100%;
   margin: 0;
-  background: #1a1d22;
+  background: #0f1218;
 }
 
+/* APP HOLDER */
 .app {
-  min-height: 100vh;
-  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* SPILLRAMME */
+.scene-frame {
+  position: relative;
+  width: 92%;
+  max-width: 1100px;
+  height: 650px;
+  border-radius: 22px;
+  overflow: hidden;
+  box-shadow: 0 40px 100px rgba(0, 0, 0, 0.8);
+}
+
+/* BILDET */
+.scene-background {
+  position: absolute;
+  inset: 0;
   background-size: cover;
   background-position: center;
+
+  filter: brightness(1.22) contrast(1.1) saturate(0.95);
+
+  box-shadow: inset 0 0 120px rgba(0, 0, 0, 0.45);
+
   transition: background-image 0.8s ease;
+}
+
+/* MØRKT OVERLAG FOR TEKST */
+.scene-overlay {
+  position: absolute;
+  inset: 0;
+
+  background: radial-gradient(
+    circle at center,
+    rgba(10, 15, 25, 0.03) 0%,
+    rgba(10, 15, 25, 0.22) 45%,
+    rgba(10, 15, 25, 0.6) 80%
+  );
+
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-/* YTRE RAMME */
-.scene-wrapper {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.scene-wrapper {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-/* HOVEDPANELET */
-.scene-panel {
-  max-width: 720px;
-  width: 90%;
-  padding: 56px 48px;
-  background: rgba(15, 20, 30, 0.78);
-  backdrop-filter: blur(10px);
-  border-radius: 22px;
-
-  /* dybde */
-  box-shadow: 0 40px 80px rgba(0, 0, 0, 0.55),
-    inset 0 0 120px rgba(0, 0, 0, 0.6);
-
-  text-align: center;
-  color: #f2f2f2;
-}
-
-/* INNHOLDET */
+/* INNHOLD */
 .scene-content {
-  max-width: 700px;
+  max-width: 680px;
   padding: 48px;
-  color: #f2f2f2;
   text-align: center;
-
-  /* cinematic vignette */
-  box-shadow: inset 0 0 140px rgba(0, 0, 0, 0.6);
-  border-radius: 16px;
+  color: #f2f2f2;
 }
 
 /* TEKST */
 .scene-text {
   white-space: pre-line;
-  font-size: 1.15rem;
+  font-family: Georgia, serif;
   line-height: 1.8;
-  margin-bottom: 40px;
-  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.15rem;
+  margin-bottom: 36px;
 }
 
-/* VALG */
+/* KNAPPER */
 .choices {
   display: flex;
   flex-direction: column;
   gap: 14px;
 }
 
-/* GLASS-KNAPPER */
 .choice-button {
   background: rgba(255, 255, 255, 0.08);
   border: 1px solid rgba(255, 255, 255, 0.25);
   color: #f2f2f2;
-  padding: 14px 18px;
+  padding: 14px;
   border-radius: 10px;
   cursor: pointer;
-  font-size: 1rem;
   backdrop-filter: blur(6px);
-  transition: background 0.2s ease, transform 0.1s ease;
-}
-
-.choice-button:hover {
-  background: rgba(255, 255, 255, 0.16);
-}
-
-.choice-button:active {
-  transform: translateY(1px);
-}
-
-/* RESTART */
-.restart-button {
-  margin-top: 24px;
-  background: transparent;
-  border: 1px solid rgba(255, 255, 255, 0.4);
-  color: #f2f2f2;
-  padding: 12px 18px;
-  border-radius: 8px;
-  cursor: pointer;
-  opacity: 0.85;
-}
-
-.restart-button:hover {
-  opacity: 1;
 }
 
 /* FADE */

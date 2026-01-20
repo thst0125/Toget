@@ -11,21 +11,20 @@ const backgroundMap = {
   exit: "/bg/exit.jpg",
   ending: "/bg/ending.jpg",
 };
-//APpp funksjonen holder styr på hvilken scene som er aktiv for øyeblikket
-//const scene henter riktig scene basert på brukerens valg
+
 function App() {
   const [sceneId, setSceneId] = useState("start");
+
   const scene = scenes[sceneId];
 
   return (
-    <main
-      className="app"
-      style={{
-        backgroundImage: `url(${backgroundMap[scene.background]})`,
-      }}
-    >
-      <SceneView scene={scene} onChoice={setSceneId} />
-    </main>
+    <div className="app">
+      <SceneView
+        scene={scene}
+        backgroundImage={backgroundMap[scene.background]}
+        onChoice={setSceneId}
+      />
+    </div>
   );
 }
 
