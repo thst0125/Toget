@@ -18,26 +18,31 @@ export function SceneView({ scene, onChoice }: Props) {
   const isEnding = scene.choices.length === 0;
 
   return (
-    <div className={`scene ${visible ? "fade-in" : "fade-out"}`}>
-      <p className="scene-text">{scene.text}</p>
+    <div className="scene-wrapper">
+      <div className={`scene-panel ${visible ? "fade-in" : "fade-out"}`}>
+        <p className="scene-text">{scene.text}</p>
 
-      <div className="choices">
-        {!isEnding &&
-          scene.choices.map((choice) => (
+        <div className="choices">
+          {!isEnding &&
+            scene.choices.map((choice) => (
+              <button
+                key={choice.text}
+                className="choice-button"
+                onClick={() => onChoice(choice.next)}
+              >
+                {choice.text}
+              </button>
+            ))}
+
+          {isEnding && (
             <button
-              key={choice.text}
-              className="choice-button"
-              onClick={() => onChoice(choice.next)}
+              className="restart-button"
+              onClick={() => onChoice("start")}
             >
-              {choice.text}
+              Start på nytt
             </button>
-          ))}
-
-        {isEnding && (
-          <button className="restart-button" onClick={() => onChoice("start")}>
-            Start på nytt
-          </button>
-        )}
+          )}
+        </div>
       </div>
     </div>
   );

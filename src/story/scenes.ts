@@ -1,16 +1,15 @@
 import type { Scene } from "./types";
 
 export const scenes: Record<string, Scene> = {
-  // Første scene i historien
   start: {
     id: "start",
+    background: "train",
     text: `
 Du sitter i en togvogn som beveger seg jevnt fremover.
 Lyset er dempet. Utenfor vinduet er det mørkt.
 
 Du kan ikke huske når du gikk på.
     `,
-    // Brukerens første valg
     choices: [
       { text: "Se ut av vinduet", next: "vindu" },
       { text: "Se deg rundt i vognen", next: "vogn" },
@@ -18,9 +17,9 @@ Du kan ikke huske når du gikk på.
     ],
   },
 
-  // Scenen der brukeren ser ut av vinduet
   vindu: {
     id: "vindu",
+    background: "train",
     text: `
 Mørket utenfor gir ingenting tilbake.
 Bare refleksjonen av deg selv i glasset.
@@ -31,9 +30,9 @@ Bare refleksjonen av deg selv i glasset.
     ],
   },
 
-  // Scenen der brukeren ser seg rundt i vognen
   vogn: {
     id: "vogn",
+    background: "train",
     text: `
 Du ser deg rundt i vognen.
 Det sitter noen få andre her.
@@ -47,9 +46,9 @@ Ingen sier noe, men en av dem ser på deg som om de visste at du kom.
     ],
   },
 
-  // Scene hvor brukeren kan velge å være passiv
   stillhet: {
     id: "stillhet",
+    background: "train",
     text: `
 Du blir sittende.
 Lyden av skinner og vind er konstant.
@@ -61,9 +60,9 @@ Det føles som om tiden går, men du er ikke sikker.
     ],
   },
 
-  // Første karakter blir introdusert
   person: {
     id: "person",
+    background: "conversation",
     text: `
 "Jeg har sittet her lenge", sier de.
 "Så lenge at jeg sluttet å telle."
@@ -78,9 +77,9 @@ Bare vant.
     ],
   },
 
-  // Samtale: hvorfor personen aldri gikk av
   aldri_gatt_av: {
     id: "aldri_gatt_av",
+    background: "conversation",
     text: `
 De trekker litt på skuldrene.
 
@@ -97,25 +96,9 @@ når det sluttet å være et valg.
     ],
   },
 
-  // Samtale: hvor toget egentlig skal
-  hvor_toget_skal: {
-    id: "hvor_toget_skal",
-    text: `
-De smiler svakt.
-
-"Det har aldri vært poenget," sier de.
-"Det viktige er at det beveger seg."
-    `,
-    choices: [
-      { text: "Spørre hva de mener med det", next: "aldri_gatt_av" },
-      { text: "Avslutte samtalen", next: "vogn" },
-      { text: "Bli sittende i stillhet", next: "stillhet" },
-    ],
-  },
-
-  // Samtale: anger
   anger: {
     id: "anger",
+    background: "conversation",
     text: `
 De blir stille en stund.
 
@@ -131,9 +114,9 @@ De ser bort, som om svaret ligger et sted utenfor vinduet.
     ],
   },
 
-  // Karakter nummer to blir introdusert: den som angrer
   angret_person: {
     id: "angret_person",
+    background: "regret",
     text: `
 En person står ved døren mellom to vogner.
 Hånden deres hviler på dørhåndtaket,
@@ -151,9 +134,9 @@ De ser ikke på deg når de snakker.
     ],
   },
 
-  // Oppfølgingsscene: hva som skjedde da de gikk av
   hva_som_skjedde: {
     id: "hva_som_skjedde",
+    background: "regret",
     text: `
 De rister svakt på hodet.
 
@@ -169,9 +152,9 @@ Hånden strammes rundt håndtaket igjen.
     ],
   },
 
-  // Oppfølgingsscene: hvorfor de gikk på igjen
   hvorfor_tilbake: {
     id: "hvorfor_tilbake",
+    background: "regret",
     text: `
 "Fordi det var kjent", sier de.
 "Og fordi det som ventet der ute
@@ -185,17 +168,15 @@ De slipper dørhåndtaket.
     ],
   },
 
-  // Lokføreren blir introdusert
   lokforer: {
     id: "lokforer",
+    background: "control",
     text: `
 Fronten av toget er stille.
 Det står én person der, vendt bort fra deg.
 
 "Dette toget stopper ikke," sier de.
 "Men dørene fungerer."
-
-De snur seg ikke når de snakker.
     `,
     choices: [
       { text: "Spørre hva de mener", next: "hva_mener_du" },
@@ -203,17 +184,15 @@ De snur seg ikke når de snakker.
     ],
   },
 
-  // Lokføreren forklarer reglene
   hva_mener_du: {
     id: "hva_mener_du",
+    background: "control",
     text: `
 "Det betyr bare én ting," sier de rolig.
 "Du kan bli så lenge du vil."
 
 "Men hvis du går,
 er det ditt valg."
-
-Toget fortsetter å bevege seg.
     `,
     choices: [
       { text: "Gå mot døren", next: "doren" },
@@ -221,16 +200,12 @@ Toget fortsetter å bevege seg.
     ],
   },
 
-  // Nødbremsen
   nodbrems: {
     id: "nodbrems",
+    background: "control",
     text: `
 En rød spak henger på veggen ved døren.
 Den er slitt, som om den har blitt brukt før.
-
-Det står tydelig hva den er ment for.
-
-Toget beveger seg fortsatt jevnt fremover.
     `,
     choices: [
       { text: "Trekke i nødbremsen", next: "brems_trukket" },
@@ -238,19 +213,15 @@ Toget beveger seg fortsatt jevnt fremover.
     ],
   },
 
-  // Resultatet av å trekke i nødbremsen
   brems_trukket: {
     id: "brems_trukket",
+    background: "control",
     text: `
 Du trekker i spaken.
 
 Toget bremser.
 Bare litt.
-Nok til at du merker det.
-
 Så fortsetter det som før.
-
-Ingen sier noe.
     `,
     choices: [
       { text: "Gå videre i toget", next: "lokforer" },
@@ -258,16 +229,14 @@ Ingen sier noe.
     ],
   },
 
-  // Døren – valget før avslutning
   doren: {
     id: "doren",
+    background: "exit",
     text: `
 Du står ved døren.
 
 Den er ikke låst.
 Utenfor er det mørkt, men stille.
-
-Bak deg fortsetter toget.
     `,
     choices: [
       { text: "Gå av", next: "slutt_gar_av" },
@@ -276,15 +245,10 @@ Bak deg fortsetter toget.
     ],
   },
 
-  // Avslutning: gå av toget
   slutt_gar_av: {
     id: "slutt_gar_av",
+    background: "ending",
     text: `
-Du åpner døren.
-
-Det er mørkt utenfor,
-men stille på en annen måte enn inne i toget.
-
 Du tar et steg ut.
 
 Bak deg fortsetter toget.
@@ -292,27 +256,22 @@ Bak deg fortsetter toget.
     choices: [],
   },
 
-  // Avslutning: bli på toget
   slutt_blir: {
     id: "slutt_blir",
+    background: "ending",
     text: `
-Du slipper døren.
+Du setter deg igjen.
 
-Setter deg igjen.
-
-Noen har forlatt setet sitt.
 Toget beveger seg videre.
     `,
     choices: [],
   },
 
-  // Avslutning: passivitet / nøling
   slutt_passiv: {
     id: "slutt_passiv",
+    background: "ending",
     text: `
-Du blir stående litt for lenge.
-
-Døren lukker seg av seg selv.
+Døren lukker seg.
 
 Toget fortsetter.
     `,

@@ -1,12 +1,19 @@
-export type SceneId = string;
-
 export type Choice = {
   text: string;
-  next: SceneId;
+  next: string;
 };
 
+export type BackgroundType =
+  | "train"
+  | "conversation"
+  | "regret"
+  | "control"
+  | "exit"
+  | "ending";
+
 export type Scene = {
-  id: SceneId;
+  id: string;
   text: string;
   choices: Choice[];
+  background: BackgroundType;
 };
