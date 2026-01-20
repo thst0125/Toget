@@ -1,9 +1,10 @@
 import { useState } from "react";
 import { scenes } from "./story/scenes";
 import { SceneView } from "./components/SceneView";
+import type { BackgroundType } from "./story/types";
 import "./styles.css";
 
-const backgroundMap = {
+const backgroundMap: Record<BackgroundType, string> = {
   train: "/bg/train.jpg",
   conversation: "/bg/conversation.jpg",
   regret: "/bg/regret.jpg",
@@ -17,11 +18,13 @@ function App() {
 
   const scene = scenes[sceneId];
 
+  const backgroundImage = backgroundMap[scene.background];
+
   return (
     <div className="app">
       <SceneView
         scene={scene}
-        backgroundImage={backgroundMap[scene.background]}
+        backgroundImage={backgroundImage}
         onChoice={setSceneId}
       />
     </div>
