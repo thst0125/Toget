@@ -1,4 +1,4 @@
-/* SIDEBAKGRUNN */
+/* BAKGRUNN */
 html,
 body,
 #root {
@@ -7,7 +7,6 @@ body,
   background: #0f1218;
 }
 
-/* APP HOLDER */
 .app {
   height: 100%;
   display: flex;
@@ -40,7 +39,7 @@ body,
   transition: background-image 0.8s ease;
 }
 
-/* MØRKT OVERLAG FOR TEKST */
+/* MØRK OVERLAY FOR TEKST */
 .scene-overlay {
   position: absolute;
   inset: 0;
