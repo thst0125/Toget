@@ -269,7 +269,7 @@ Toget beveger seg videre.
 
   slutt_passiv: {
     id: "slutt_passiv",
-    background: "ending",
+    background: "exit",
     text: `
 Døren lukker seg.
 
