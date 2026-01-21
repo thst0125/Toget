@@ -65,13 +65,13 @@ Hånden strammes rundt håndtaket igjen.
 ikke var det jeg trodde."
 
 De slipper dørhåndtaket.
-    `,choices:[{text:"Gå videre i toget",next:"lokforer"},{text:"Bli stående litt til",next:"stillhet"}]},lokforer:{id:"lokforer",background:"lokforer",text:`
+    `,choices:[{text:"Gå videre i toget",next:"lokforer"},{text:"Bli stående litt til",next:"stillhet"}]},lokforer:{id:"lokforer",background:"lokforeren",text:`
 Fronten av toget er stille.
 Det står én person der, vendt bort fra deg.
 
 "Dette toget stopper ikke," sier de.
 "Men dørene fungerer."
-    `,choices:[{text:"Spørre hva de mener",next:"hva_mener_du"},{text:"Gå uten å si noe",next:"vogn"}]},hva_mener_du:{id:"hva_mener_du",background:"control",text:`
+    `,choices:[{text:"Spørre hva de mener",next:"hva_mener_du"},{text:"Gå uten å si noe",next:"vogn"}]},hva_mener_du:{id:"hva_mener_du",background:"lokforeren",text:`
 "Det betyr bare én ting," sier de rolig.
 "Du kan bli så lenge du vil."
 
@@ -99,8 +99,8 @@ Bak deg fortsetter toget.
 Du setter deg igjen.
 
 Toget beveger seg videre.
-    `,choices:[]},slutt_passiv:{id:"slutt_passiv",background:"ending",text:`
+    `,choices:[]},slutt_passiv:{id:"slutt_passiv",background:"exit",text:`
 Døren lukker seg.
 
 Toget fortsetter.
-    `,choices:[]}};function ao({scene:O,backgroundImage:cl,onChoice:J}){const[h,j]=Gn.useState(!0);Gn.useEffect(()=>{j(!1);const nl=setTimeout(()=>j(!0),150);return()=>clearTimeout(nl)},[O.id]);const k=O.choices.length===0;return gt.jsxs("div",{className:"scene-frame",children:[gt.jsx("div",{className:"scene-background",style:{backgroundImage:`url(${cl})`}}),gt.jsx("div",{className:"scene-overlay",children:gt.jsxs("div",{className:`scene-content ${h?"fade-in":"fade-out"}`,children:[gt.jsx("p",{className:"scene-text",children:O.text}),gt.jsxs("div",{className:"choices",children:[!k&&O.choices.map(nl=>gt.jsx("button",{className:"choice-button",onClick:()=>J(nl.next),children:nl.text},nl.text)),k&&gt.jsx("button",{className:"restart-button",onClick:()=>J("start"),children:"Start på nytt"})]})]})})]})}const eo={train:"bg//train.jpg",conversation:"bg//conversation.jpg",regret:"bg//regret.jpg",control:"bg//control.jpg",exit:"bg//exit.jpg",ending:"bg//ending.jpg",windowReflection:"bg/window-reflection.jpg","train-exit":"bg/train-exit.jpg"};function no(){const[O,cl]=Gn.useState("start"),J=uo[O],h=eo[J.background];return gt.jsx("div",{className:"app",children:gt.jsx(ao,{scene:J,backgroundImage:h,onChoice:cl})})}to.createRoot(document.getElementById("root")).render(gt.jsx(Gn.StrictMode,{children:gt.jsx(no,{})}));
+    `,choices:[]}};function ao({scene:O,backgroundImage:cl,onChoice:J}){const[h,j]=Gn.useState(!0);Gn.useEffect(()=>{j(!1);const nl=setTimeout(()=>j(!0),150);return()=>clearTimeout(nl)},[O.id]);const k=O.choices.length===0;return gt.jsxs("div",{className:"scene-frame",children:[gt.jsx("div",{className:"scene-background",style:{backgroundImage:`url(${cl})`}}),gt.jsx("div",{className:"scene-overlay",children:gt.jsxs("div",{className:`scene-content ${h?"fade-in":"fade-out"}`,children:[gt.jsx("p",{className:"scene-text",children:O.text}),gt.jsxs("div",{className:"choices",children:[!k&&O.choices.map(nl=>gt.jsx("button",{className:"choice-button",onClick:()=>J(nl.next),children:nl.text},nl.text)),k&&gt.jsx("button",{className:"restart-button",onClick:()=>J("start"),children:"Start på nytt"})]})]})})]})}const eo={train:"bg//train.jpg",conversation:"bg//conversation.jpg",regret:"bg//regret.jpg",control:"bg//control.jpg",exit:"bg//exit.jpg",ending:"bg//ending.jpg",windowReflection:"bg/window-reflection.jpg","train-exit":"bg/train-exit.jpg",lokforeren:"bg/lokforer.jpg"};function no(){const[O,cl]=Gn.useState("start"),J=uo[O],h=eo[J.background];return gt.jsx("div",{className:"app",children:gt.jsx(ao,{scene:J,backgroundImage:h,onChoice:cl})})}to.createRoot(document.getElementById("root")).render(gt.jsx(Gn.StrictMode,{children:gt.jsx(no,{})}));
