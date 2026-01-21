@@ -9,6 +9,7 @@ export type BackgroundType =
   | "regret"
   | "control"
   | "exit"
+  | "windowReflection"
   | "ending";
 
 export type Scene = {

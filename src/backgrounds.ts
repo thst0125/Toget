@@ -7,4 +7,5 @@ export const backgroundImages: Record<BackgroundType, string> = {
   control: "bg//control.jpg",
   exit: "bg//exit.jpg",
   ending: "bg//ending.jpg",
+  windowReflection: "bg/window-reflection.jpg",
 };

@@ -19,7 +19,7 @@ Du kan ikke huske når du gikk på.
 
   vindu: {
     id: "vindu",
-    background: "train",
+    background: "windowReflection",
     text: `
 Mørket utenfor gir ingenting tilbake.
 Bare refleksjonen av deg selv i glasset.
