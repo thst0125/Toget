@@ -10,6 +10,8 @@ export type BackgroundType =
   | "control"
   | "exit"
   | "windowReflection"
+  | "train-exit"
+  | "lokforer"
   | "ending";
 
 export type Scene = {

@@ -170,7 +170,7 @@ De slipper dørhåndtaket.
 
   lokforer: {
     id: "lokforer",
-    background: "control",
+    background: "lokforer",
     text: `
 Fronten av toget er stille.
 Det står én person der, vendt bort fra deg.
@@ -186,7 +186,7 @@ Det står én person der, vendt bort fra deg.
 
   hva_mener_du: {
     id: "hva_mener_du",
-    background: "control",
+    background: "lokforer",
     text: `
 "Det betyr bare én ting," sier de rolig.
 "Du kan bli så lenge du vil."
@@ -247,7 +247,7 @@ Utenfor er det mørkt, men stille.
 
   slutt_gar_av: {
     id: "slutt_gar_av",
-    background: "ending",
+    background: "train-exit",
     text: `
 Du tar et steg ut.
 

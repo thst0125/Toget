@@ -8,4 +8,6 @@ export const backgroundImages: Record<BackgroundType, string> = {
   exit: "bg//exit.jpg",
   ending: "bg//ending.jpg",
   windowReflection: "bg/window-reflection.jpg",
+  "train-exit": "bg/train-exit.jpg",
+  lokforer: "bg/lokforer.jpg",
 };
