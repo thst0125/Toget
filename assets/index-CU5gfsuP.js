@@ -65,7 +65,7 @@ Hånden strammes rundt håndtaket igjen.
 ikke var det jeg trodde."
 
 De slipper dørhåndtaket.
-    `,choices:[{text:"Gå videre i toget",next:"lokforer"},{text:"Bli stående litt til",next:"stillhet"}]},lokforer:{id:"lokforer",background:"control",text:`
+    `,choices:[{text:"Gå videre i toget",next:"lokforer"},{text:"Bli stående litt til",next:"stillhet"}]},lokforer:{id:"lokforer",background:"lokforer",text:`
 Fronten av toget er stille.
 Det står én person der, vendt bort fra deg.
 
