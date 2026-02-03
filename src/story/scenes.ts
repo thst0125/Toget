@@ -72,7 +72,6 @@ Bare vant.
     `,
     choices: [
       { text: "Spørre hvorfor de aldri gikk av", next: "aldri_gatt_av" },
-      { text: "Spørre hvor toget skal", next: "hvor_toget_skal" },
       { text: "Avslutte samtalen", next: "stillhet" },
     ],
   },
@@ -251,7 +250,7 @@ Utenfor er det mørkt, men stille.
     text: `
 Du tar et steg ut.
 
-Bak deg fortsetter toget.
+Toget kjører videre. 
     `,
     choices: [],
   },
